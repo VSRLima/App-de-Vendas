@@ -1,34 +1,25 @@
-<table>
-  <thead>
-    <th>Id</th>
-    <th>Products</th>
-    <th>Date</th>
-    <th>Price</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let venda of vendas">
-      <td>{{venda.id}}</td>
-      <td>{{venda.products}}</td>
-      <td>{{venda.date | date}}</td>
-      <td>{{venda.price | currency}}</td>
-        <button type="button" (click)="editVenda(venda)">Editar</button>
-        <button type="button" (click)="deleteVenda(venda)"> Deletar</button>
-    </tr>
-  </tbody>
+<div>
+  <h3>Lista de Produtos</h3>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+  <ng-container matColumnDef="products">
+    <th mat-header-cell *matHeaderCellDef> Produto(s) </th>
+    <td mat-cell *matCellDef="let element"> {{element.products}} </td>
+  </ng-container>
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef> Data </th>
+    <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+  </ng-container>
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Preço </th>
+      <td mat-cell *matCellDef="let element"> {{element.price | currency:'BRL'}} <button mat-flat-button color="accent" routerLink="/detail/{{element.id}}" selected>Detalhe</button></td>
+    </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<form (ngSubmit)="f.form.valid && saveVenda(f)" #f="ngForm" novalidate>
-  <div class="products">
-    <label for="products">Produto</label>
-    <input type="text" [(ngModel)]="venda.products" id="products" name="products" #product="ngModel">
-  </div>
-  <div class="date">
-    <label for="date">Data</label>
-    <input type="date" [(ngModel)]="venda.date" name="date" id="date" #date="ngModel">
-  </div>
-  <div class="price">
-    <label for="price">Preço</label>
-    <input type="number" [(ngModel)]="venda.price" name="price" id="price" #price="ngModel">
-  </div>
-  <button type="submit">Salvar</button>
-  <button type="reset" (click)="cleanForm(f)">Resetar</button>
-</form>

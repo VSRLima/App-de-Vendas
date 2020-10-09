@@ -11,7 +11,6 @@ import { Produtos } from './../models/produtos';
 export class ProdutosService {
 
   url = 'http://localhost:3000/produtos';
-  urlV = 'http://localhost:3000/vendas';
 
   constructor(private httpClient: HttpClient) { }
 

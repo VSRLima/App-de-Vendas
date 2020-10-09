@@ -23,16 +23,6 @@
       "products": "Cabo USB",
       "date": "1999-09-23",
       "price": 49.9
-    },
-    {
-      "products": {
-        "id": 92,
-        "products": "Cabo USB",
-        "price": 19.9,
-        "date": "",
-        "amount": 1
-      },
-      "id": 5
     }
   ],
   "produtos": [

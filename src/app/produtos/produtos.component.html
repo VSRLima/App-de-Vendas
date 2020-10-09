@@ -18,10 +18,12 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<form (ngSubmit)="f.form.valid && saveVenda(f)" #f="ngForm" novalidate>
-  <h2>Selecione o(s) produto(s) desejado(s):</h2>
+<div>
+  <h3>Adicionar Novo Produto</h3>
+</div>
+<form class="example-container" [formGroup]="productForm" (ngSubmit)="addVenda()" #f="ngForm">
     <div class="example-section" class="check" *ngFor="let produto of produtos">
-      <mat-checkbox  name="produto[]" id="{{produto.id}}" (click)="onSelect(produto)" class="example-margin" color="primary">{{produto.products}}</mat-checkbox>
+      <mat-checkbox matInput formControlName="products" name="products[]" id="{{produto.id}}" (click)="onSelect(produto)" class="example-margin" color="primary">{{produto.products}}</mat-checkbox>
     </div>
     <button mat-raised-button color="primary">Salvar</button>
     <button mat-raised-button color="primary" type="reset" (click)="cleanForm(f)">Resetar</button>

@@ -3,7 +3,10 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Venda } from './../models/venda';
-import { Produtos } from './../models/produtos';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -13,10 +16,6 @@ export class VendaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
-  }
-
   getVendas(): Observable<Venda[]> {
     return this.httpClient.get<Venda[]>(this.url).pipe(retry(2), catchError(this.handleError))
   }
@@ -25,16 +24,18 @@ export class VendaService {
     return this.httpClient.get<Venda>(this.url + '/' + id).pipe(retry(2), catchError(this.handleError))
   }
 
-  saveVenda(vendas: Venda): Observable<Venda> {
-    return this.httpClient.post<Venda>(this.url, JSON.stringify(vendas), this.httpOptions).pipe(retry(2), catchError(this.handleError))
+  saveVenda(vendas): Observable<Venda> {
+    return this.httpClient.post<Venda>(this.url, vendas, httpOptions).pipe(retry(2), catchError(this.handleError))
   }
 
-  updateVenda(vendas: Venda): Observable<Venda> {
-    return this.httpClient.put<Venda>(this.url +'/' + vendas.id, JSON.stringify(vendas), this.httpOptions).pipe(retry(1), catchError(this.handleError))
+  updateVenda(id, produto): Observable<any> {
+    const url = `${this.url}/${id}`
+    return this.httpClient.put(url, produto, httpOptions).pipe(retry(1), catchError(this.handleError))
   }
 
-  deleteVenda(vendas: Venda) {
-    return this.httpClient.delete<Venda>(this.url +'/' + vendas.id, this.httpOptions).pipe(retry(1), catchError(this.handleError))
+  deleteVenda(id) {
+    const url = `${this.url}/${id}`
+    return this.httpClient.delete<Venda>(url, httpOptions).pipe(retry(1), catchError(this.handleError))
   }
 
   handleError(error: HttpErrorResponse) {

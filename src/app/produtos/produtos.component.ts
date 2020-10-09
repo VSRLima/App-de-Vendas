@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Produtos } from './../models/produtos';
 import { ProdutosService } from './../services/produtos.service';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router'
 import { VendaService } from './../services/venda.service';
 import { Venda } from './../models/venda';
 
@@ -17,15 +18,21 @@ export class ProdutosComponent implements OnInit {
   produto = {} as Produtos;
   produtos: Produtos[];
   venda = {} as Venda;
-  vendas: Venda[] = [];
+  vendas: Venda[];
+  receber = [];
+  isLoadingResults = false;
+  productForm: FormGroup;
   dataSource = this.produtosService.getProducts();
   displayedColumns: string[] = ['position', 'name', 'price', 'amount'];
   
 
-  constructor(private produtosService: ProdutosService, private vendaService: VendaService) { }
+  constructor(private produtosService: ProdutosService, private vendaService: VendaService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.getProducts();
+    this.productForm = this.formBuilder.group ({
+      'products': [null, Validators.required]
+      })
   }
 
   getProducts() {
@@ -35,33 +42,30 @@ export class ProdutosComponent implements OnInit {
     this.produtosService.getProductsById(id).subscribe((produtos: Produtos) => {this.produto = produtos})
   }
 
-  saveVenda(form: NgForm) {
-    if(this.venda.id !== undefined) {
-      this.vendaService.updateVenda(this.venda).subscribe(() => {this.cleanForm(form);
-      });
-    } else {
-      this.vendaService.saveVenda(this.venda).subscribe(() => {this.cleanForm(form);
-      });
-      
-    } 
-  }
-
-  getVendas() {
-    this.vendaService.getVendas().subscribe((vendas: Venda[]) => {this.vendas = vendas;
-    });
+  addVenda() {
+    this.isLoadingResults = true;
+    this.vendaService.saveVenda(this.venda).subscribe(res => {
+      const id = res['id'];
+      this.isLoadingResults = false;
+      this.router.navigate(['/detail', id]);
+    }, (err) => {
+      console.log(err);
+      this.isLoadingResults = false;
+    })
   }
   
   cleanForm(form: NgForm) {
-    this.getVendas();
     form.resetForm();
     this.venda = {} as Venda;
-    this.vendas = [];
   }
 
   onSelect(products) {
-    this.venda.products = products
-    
-    console.log(this.venda.products)
-  } 
+  this.receber.push(products)
+  for (var i = 0; i < this.receber.length; i++) {
+    this.venda = {id: null, products: this.receber[i].id, date: null, price: this.receber[i].price};
+    this.receber = [];
+  }
+    console.log(this.venda);
+  };
 };
 

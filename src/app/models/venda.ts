@@ -1,6 +1,6 @@
 export interface Venda {
     id: number;
     products: string;
-    date: number;
+    date: Date;
     price: number;
 }
