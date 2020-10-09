@@ -1,0 +1,28 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef='let produto'>{{produto.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nome do Produto</th>
+      <td mat-cell *matCellDef="let produto">{{produto.products}}</td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Preço</th>
+      <td mat-cell *matCellDef="let produto">{{produto.price}}</td>
+    </ng-container>
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef>Quantidade</th>
+      <td mat-cell *matCellDef="let produto">{{produto.amount}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<form (ngSubmit)="f.form.valid && saveVenda(f)" #f="ngForm" novalidate>
+  <h2>Selecione o(s) produto(s) desejado(s):</h2>
+    <div class="example-section" class="check" *ngFor="let produto of produtos">
+      <mat-checkbox  name="produto[]" id="{{produto.id}}" (click)="onSelect(produto)" class="example-margin" color="primary">{{produto.products}}</mat-checkbox>
+    </div>
+    <button mat-raised-button color="primary">Salvar</button>
+    <button mat-raised-button color="primary" type="reset" (click)="cleanForm(f)">Resetar</button>
+  </form>

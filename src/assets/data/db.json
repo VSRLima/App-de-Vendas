@@ -3,26 +3,115 @@
     {
       "id": 1,
       "products": "Xiaomi",
-      "date": "23/09/2020",
+      "date": "09-23-2020",
       "price": 2000
     },
     {
       "id": 2,
       "products": "Capa VX",
-      "date": "24/09/2020",
+      "date": "09-24-2020",
       "price": 79.9
     },
     {
       "id": 3,
       "products": "Fone de Ouvido",
-      "date": "25/09/2020",
+      "date": "09-25-2020",
       "price": 179.9
     },
     {
       "id": 4,
-      "products": "Carredor",
-      "date": "26/09/2020",
+      "products": "Cabo USB",
+      "date": "1999-09-23",
       "price": 49.9
+    },
+    {
+      "products": {
+        "id": 92,
+        "products": "Cabo USB",
+        "price": 19.9,
+        "date": "",
+        "amount": 1
+      },
+      "id": 5
+    }
+  ],
+  "produtos": [
+    {
+      "id": 90,
+      "products": "Powerbank",
+      "price": 200,
+      "date": "",
+      "amount": 1
+    },
+    {
+      "id": 91,
+      "products": "Calculadora",
+      "price": 158.9,
+      "date": "",
+      "amount": 1
+    },
+    {
+      "id": 92,
+      "products": "Cabo USB",
+      "price": 19.9,
+      "date": "",
+      "amount": 1
+    },
+    {
+      "id": 93,
+      "products": "JBL",
+      "price": 999.9,
+      "date": "",
+      "amount": 1
+    },
+    {
+      "id": 94,
+      "products": "Cabo OTG",
+      "price": 49.9,
+      "date": "",
+      "amount": 1
+    },
+    {
+      "id": 95,
+      "products": "Headset",
+      "price": 249.9,
+      "date": "",
+      "amount": 1
+    },
+    {
+      "id": 96,
+      "products": "Teclado mecânico",
+      "price": 199.9,
+      "date": "",
+      "amount": 1
+    },
+    {
+      "id": 97,
+      "products": "Mouse",
+      "price": 249.9,
+      "date": "",
+      "amount": 1
+    },
+    {
+      "id": 98,
+      "products": "Light Ring",
+      "price": 799.9,
+      "date": "",
+      "amount": 1
+    },
+    {
+      "id": 99,
+      "products": "Iphone X",
+      "price": 3999.9,
+      "date": "",
+      "amount": 1
+    },
+    {
+      "id": 100,
+      "products": "Galaxy Note 20",
+      "price": 4999.9,
+      "date": "",
+      "amount": 1
     }
   ]
 }

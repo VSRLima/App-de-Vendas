@@ -6,6 +6,8 @@ import { VendaService } from './../services/venda.service';
 
 
 
+
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -15,6 +17,8 @@ export class CadastroComponent implements OnInit {
 
   venda = {} as Venda;
   vendas: Venda[];
+ 
+  
 
   constructor(private vendaService: VendaService) {}
 
@@ -52,4 +56,5 @@ export class CadastroComponent implements OnInit {
     this.venda = {} as Venda;
   }
 
+ 
 }
