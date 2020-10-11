@@ -1,27 +1,17 @@
-# TesteAngular
+# App de Vendas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
+Esse é um app de vendas, feito para Vx Case.
 
-## Development server
+## Dependências
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Angular: 10.1.5
+* Angular CLI: 10.1.4
+* Node.js: 12.18.4
 
-## Code scaffolding
+## Como executar?
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute a sequência de comandos no seu terminal:
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* `npm install` Para instalar as dependências
+* `json-server --watch src/assets/data/db.json` Para inicializar o banco de dados Json. Caso queira verificar o seu funcionamento, após usar esse comando, vá ao seu navegador e procure pelo endereço de site `http://localhost:3000/vendas`, para abrir o banco de dados das vendas. E por ultimo o `http://localhost:3000/produtos`, para abrir o banco de dados dos produtos
+* `ng serve` Para inicializar o servidor do angular, e abra um outro terminal para isso, pois o primeiro estará sendo consumido pelo serve do json. Com isso, inicie o seu navegador e procure por pelo endereço de site `http://localhost:4200/`.
