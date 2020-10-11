@@ -4,6 +4,7 @@ Esse é um app de vendas, feito para Vx Case.
 
 ## Dependências
 
+* Npm: 6.14.6
 * Angular: 10.1.5
 * Angular CLI: 10.1.4
 * Node.js: 12.18.4
