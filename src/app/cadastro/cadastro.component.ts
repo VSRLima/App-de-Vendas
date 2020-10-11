@@ -9,8 +9,9 @@ import { VendaService } from './../services/venda.service';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'products', 'date', 'price']
+  displayedColumns: string[] = ['id', 'products', 'date', 'price','detail']
   dataSource: Venda[];
+  venda = { } as Venda;
   isLoadingResults = true;
 
   constructor(private vendaService: VendaService) {}

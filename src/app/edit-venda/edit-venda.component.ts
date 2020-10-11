@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+
 import { VendaService } from './../services/venda.service';
 
 @Component({
@@ -12,8 +13,7 @@ export class EditVendaComponent implements OnInit {
 
     id: number;
     productForm: FormGroup;
-    products: string;
-    date: Date;
+    purchase_date: Date;
     price: number;
     isLoadingResults = false;
 
@@ -22,8 +22,7 @@ export class EditVendaComponent implements OnInit {
   ngOnInit(): void {
     this.getVenda(this.route.snapshot.params['id']);
     this.productForm = this.formBuilder.group({
-      'products': [null, Validators.required],
-      'date': [null, Validators.required],
+      'purchase_date': [null, Validators.required],
       'price': [null, Validators.required]
     });
   }
@@ -32,17 +31,17 @@ export class EditVendaComponent implements OnInit {
     this.service.getVendasById(id).subscribe(data => {
       this.id = data.id;
       this.productForm.setValue({
-        products: data.products,
-        date: data.date,
+        purchase_date: data.purchase_date,
         price: data.price
       });
     });
   }
 
+  //O problema aqui é que o objeto que está sendo enviado acaba descontruindo o array de objetos que está no bando de dados na parte de vendas, ou seja, o que era um array com dois ou mais produtos, se transforma em um único produto.
   updateVenda(form: NgForm) {
     this.isLoadingResults = true;
     this.service.updateVenda(this.id, form).subscribe(res => {this.isLoadingResults = false;
-    this.router.navigate([`/edit/${this.id}` ]);
+    this.router.navigate(['/edit/' + this.id ]);
   }, (err) => {
     console.log(err);
     this.isLoadingResults = false;

@@ -10,7 +10,7 @@ import { VendaService } from './../services/venda.service';
 })
 export class DetailVendaComponent implements OnInit {
 
-  produto: Venda = {id: null, products: '', date: null, price: null};
+  venda: Venda = {id: null, products: '', purchase_date: null, price: null};
   isLoadingResults = true;
 
   constructor(private router: Router, private route: ActivatedRoute, private service: VendaService) { }
@@ -20,7 +20,7 @@ export class DetailVendaComponent implements OnInit {
   }
 
   getVenda(id) {
-    this.service.getVendasById(id).subscribe(data => { this.produto = data; console.log(this.produto); this.isLoadingResults = false;});
+    this.service.getVendasById(id).subscribe(data => { this.venda = data; console.log(this.venda); this.isLoadingResults = false;});
   }
 
   deleteVenda(id) {

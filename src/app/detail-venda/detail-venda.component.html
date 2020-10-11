@@ -8,19 +8,25 @@
     </div>
     <mat-card class="example-card">
       <mat-card-header>
-        <mat-card-title><h2>{{produto.products}}</h2></mat-card-title>
+        <mat-card-title><h2>Descrição da Venda</h2></mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <dl>
+        <dl *ngFor="let products of venda.products">
+          <dt>Nome do produto:</dt>
+          <dd>{{products.name}}</dd>
           <dt>Preço:</dt>
-          <dd>{{produto.price}}</dd>
+          <dd>{{products.price | currency:'BRL'}}</dd>
           <dt>Vendido em:</dt>
-          <dd>{{produto.date | date}}</dd>
+          <dd>{{venda.purchase_date | date:'d/LL/yyyy'}}</dd>
+        </dl>
+        <dl>
+          <dt class="total">Valor Total da Venda:</dt>
+          <dd>{{venda.price | currency:'BRL'}}</dd>
         </dl>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-flat-button color="primary" class="teste" routerLink="/edit/{{produto.id}}"><mat-icon>edit</mat-icon> Editar</button>
-        <button mat-flat-button color="warn" (click)="deleteVenda(produto.id)"><mat-icon>delete</mat-icon> Excluir</button>
+        <button mat-flat-button color="primary" class="space" routerLink="/edit/{{venda.id}}"><mat-icon>edit</mat-icon> Editar</button>
+        <button mat-flat-button color="warn" (click)="deleteVenda(venda.id)"><mat-icon>delete</mat-icon> Excluir</button>
       </mat-card-actions>
     </mat-card>
   </div>

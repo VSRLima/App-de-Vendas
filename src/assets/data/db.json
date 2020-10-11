@@ -1,107 +1,207 @@
 {
   "vendas": [
     {
-      "id": 1,
-      "products": "Xiaomi",
-      "date": "09-23-2020",
-      "price": 2000
+      "products": [
+        {
+          "id": 90,
+          "name": "Powerbank",
+          "price": 200,
+          "shipping_time": "3",
+          "stock": 40
+        },
+        {
+          "id": 91,
+          "name": "Calculadora",
+          "price": 158.9,
+          "shipping_time": "5",
+          "stock": 150
+        }
+      ],
+      "purchase_date": "2020-09-23",
+      "delivery_date": "2020-09-28",
+      "price": 358.9,
+      "id": 1
     },
     {
-      "id": 2,
-      "products": "Capa VX",
-      "date": "09-24-2020",
-      "price": 79.9
+      "products": [
+        {
+          "id": 92,
+          "name": "Xiaomi",
+          "price": 1999.9,
+          "shipping_time": 4,
+          "stock": 120
+        }
+      ],
+      "purchase_date": "2020-09-28",
+      "delivery_estimate_date": "02/10/2020",
+      "price": 1999,
+      "id": 2
     },
     {
-      "id": 3,
-      "products": "Fone de Ouvido",
-      "date": "09-25-2020",
-      "price": 179.9
+      "products": [
+        {
+          "id": 93,
+          "name": "Galaxy Note 20",
+          "price": 4999.9,
+          "shipping_time": "2",
+          "stock": 10
+        },
+        {
+          "id": 95,
+          "name": "Headset",
+          "price": 249.9,
+          "shipping_time": "2",
+          "stock": 5000
+        },
+        {
+          "id": 98,
+          "name": "Light Ring",
+          "price": 799.9,
+          "shipping_time": "2",
+          "stock": 5
+        }
+      ],
+      "purchase_date": "2020-10-02",
+      "delivery_estimate_date": "04/10/2020",
+      "price": 6049.7,
+      "id": 3
     },
     {
-      "id": 4,
-      "products": "Cabo USB",
-      "date": "1999-09-23",
-      "price": 49.9
+      "products": [
+        {
+          "id": 92,
+          "name": "Cabo USB",
+          "price": 18.9,
+          "shipping_time": "5",
+          "stock": 2000
+        },
+        {
+          "id": 93,
+          "name": "Carregador",
+          "price": 58.9,
+          "shipping_time": "5",
+          "stock": 150
+        }
+      ],
+      "purchase_date": "2020-10-04",
+      "delivery_estimate_date": "09/10/2020",
+      "price": 77.8,
+      "id": 4
+    },
+    {
+      "products": [
+        {
+          "id": 96,
+          "name": "Teclado mecânico",
+          "price": 199.9,
+          "shipping_time": "4",
+          "stock": 40
+        },
+        {
+          "id": 97,
+          "name": "Mouse",
+          "price": 249.9,
+          "shipping_time": "4",
+          "stock": 23
+        },
+        {
+          "id": 98,
+          "name": "Light Ring",
+          "price": 799.9,
+          "shipping_time": "2",
+          "stock": 5
+        },
+        {
+          "id": 99,
+          "name": "Iphone X",
+          "price": 3999.9,
+          "shipping_time": "7",
+          "stock": 10
+        }
+      ],
+      "purchase_date": "2020-10-09",
+      "delivery_estimate_date": "16/10/2020",
+      "price": 5249.6,
+      "id": 5
     }
   ],
   "produtos": [
     {
       "id": 90,
-      "products": "Powerbank",
+      "name": "Powerbank",
       "price": 200,
-      "date": "",
-      "amount": 1
+      "shipping_time": "3",
+      "stock": 40
     },
     {
       "id": 91,
-      "products": "Calculadora",
+      "name": "Calculadora",
       "price": 158.9,
-      "date": "",
-      "amount": 1
+      "shipping_time": "5",
+      "stock": 150
     },
     {
       "id": 92,
-      "products": "Cabo USB",
-      "price": 19.9,
-      "date": "",
-      "amount": 1
+      "name": "Cabo USB",
+      "price": 18.9,
+      "shipping_time": "",
+      "stock": 2000
     },
     {
       "id": 93,
-      "products": "JBL",
-      "price": 999.9,
-      "date": "",
-      "amount": 1
+      "name": "Carregador",
+      "price": 58.9,
+      "shipping_time": "5",
+      "stock": 150
     },
     {
       "id": 94,
-      "products": "Cabo OTG",
-      "price": 49.9,
-      "date": "",
-      "amount": 1
+      "name": "Xiaomi",
+      "price": 1999.9,
+      "shipping_time": 4,
+      "stock": 120
     },
     {
       "id": 95,
-      "products": "Headset",
+      "name": "Headset",
       "price": 249.9,
-      "date": "",
-      "amount": 1
+      "shipping_time": "2",
+      "stock": 5000
     },
     {
       "id": 96,
-      "products": "Teclado mecânico",
+      "name": "Teclado mecânico",
       "price": 199.9,
-      "date": "",
-      "amount": 1
+      "shipping_time": "4",
+      "stock": 40
     },
     {
       "id": 97,
-      "products": "Mouse",
+      "name": "Mouse",
       "price": 249.9,
-      "date": "",
-      "amount": 1
+      "shipping_time": "4",
+      "stock": 23
     },
     {
       "id": 98,
-      "products": "Light Ring",
+      "name": "Light Ring",
       "price": 799.9,
-      "date": "",
-      "amount": 1
+      "shipping_time": "2",
+      "stock": 5
     },
     {
       "id": 99,
-      "products": "Iphone X",
+      "name": "Iphone X",
       "price": 3999.9,
-      "date": "",
-      "amount": 1
+      "shipping_time": "7",
+      "stock": 10
     },
     {
       "id": 100,
-      "products": "Galaxy Note 20",
+      "name": "Galaxy Note 20",
       "price": 4999.9,
-      "date": "",
-      "amount": 1
+      "shipping_time": "8",
+      "stock": 10
     }
   ]
 }
