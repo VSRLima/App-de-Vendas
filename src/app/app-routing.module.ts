@@ -4,13 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { EditVendaComponent } from './edit-venda/edit-venda.component';
 import { DetailVendaComponent } from './detail-venda/detail-venda.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
+import { VendasComponent } from './vendas/vendas.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/vendas', pathMatch: 'full'},
   {path: 'edit/:id', component: EditVendaComponent},
   {path: 'detail/:id', component: DetailVendaComponent},
-  {path: 'vendas', component: CadastroComponent},
+  {path: 'vendas', component: VendasComponent},
   {path: 'produtos', component: ProdutosComponent}
 ];
 

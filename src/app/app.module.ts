@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { MenuComponent } from './menu/menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -21,19 +20,22 @@ import { MatCardModule} from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 
-import { CadastroComponent } from './cadastro/cadastro.component';
+import { MenuComponent } from './menu/menu.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { EditVendaComponent } from './edit-venda/edit-venda.component';
 import { DetailVendaComponent } from './detail-venda/detail-venda.component';
+import { VendasComponent } from './vendas/vendas.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroComponent,
+    VendasComponent,
     ProdutosComponent,
     MenuComponent,
     EditVendaComponent,
     DetailVendaComponent,
+    VendasComponent,
   ],
   imports: [
     BrowserModule,
